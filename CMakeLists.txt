@@ -203,6 +203,7 @@ if(ENABLE_WS)
     find_package("GnuTLS" 3.6.7)
     if(GNUTLS_FOUND)
       set(pkg_config_names_private "${pkg_config_names_private} gnutls")
+      include_directories(${GNUTLS_INCLUDE_DIRS})
       list(APPEND sources ${CMAKE_CURRENT_SOURCE_DIR}/src/wss_address.hpp
            ${CMAKE_CURRENT_SOURCE_DIR}/src/wss_address.cpp ${CMAKE_CURRENT_SOURCE_DIR}/src/wss_engine.hpp
            ${CMAKE_CURRENT_SOURCE_DIR}/src/wss_engine.cpp)
